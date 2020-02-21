@@ -6,6 +6,11 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:id="@+id/nav_jobCards"
+            android:icon="@drawable/ic_notifications"
+            android:title="@string/menu_job_cards" />
+
+        <item
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_notifications"
             android:title="@string/menu_notification" />

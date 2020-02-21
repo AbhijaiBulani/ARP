@@ -6,6 +6,12 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_jobCards"
+        android:name="com.abhijai.arp.views.ui.jobcards.JobCardFragment"
+        android:label="@string/menu_job_cards"
+        tools:layout="@layout/fragment_job_card" />
+
+    <fragment
         android:id="@+id/nav_notification"
         android:name="com.abhijai.arp.views.ui.notifications.NotificationFragment"
         android:label="@string/menu_notification"
