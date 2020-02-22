@@ -55,9 +55,11 @@ public class JobCardCandidateActivity extends AppCompatActivity {
                 CandidateModel candidateModel1 = new CandidateModel("Abhishek","86");
                 CandidateModel candidateModel2 = new CandidateModel("Arun","72");
                 CandidateModel candidateModel3 = new CandidateModel("Shiv","61");
+                CandidateModel candidateModel4 = new CandidateModel("Saurabh","77");
                 candidateModelArrayListJava.add(candidateModel1);
                 candidateModelArrayListJava.add(candidateModel2);
                 candidateModelArrayListJava.add(candidateModel3);
+                candidateModelArrayListJava.add(candidateModel4);
                 return candidateModelArrayListJava;
             }
             case 1:{
@@ -65,19 +67,25 @@ public class JobCardCandidateActivity extends AppCompatActivity {
                 CandidateModel candidateModel1 = new CandidateModel("Amit","88");
                 CandidateModel candidateModel2 = new CandidateModel("Rohit","71");
                 CandidateModel candidateModel3 = new CandidateModel("Abhijai","58");
+                CandidateModel candidateModel5 = new CandidateModel("Arun","78");
                 candidateModelArrayListAndroid.add(candidateModel3);
                 candidateModelArrayListAndroid.add(candidateModel1);
                 candidateModelArrayListAndroid.add(candidateModel2);
                 candidateModelArrayListAndroid.add(candidateModel4);
+                candidateModelArrayListAndroid.add(candidateModel5);
                 return candidateModelArrayListAndroid;
             }
             case 2:{
                 CandidateModel candidateModel1 = new CandidateModel("Saurabh","87");
                 CandidateModel candidateModel2 = new CandidateModel("Bhusan","66");
                 CandidateModel candidateModel3 = new CandidateModel("Ashutosh","73");
+                CandidateModel candidateModel4 = new CandidateModel("Arun","27");
+                CandidateModel candidateModel5 = new CandidateModel("Nitesh","57");
                 candidateModelArrayListAi.add(candidateModel1);
                 candidateModelArrayListAi.add(candidateModel2);
                 candidateModelArrayListAi.add(candidateModel3);
+                candidateModelArrayListAi.add(candidateModel4);
+                candidateModelArrayListAi.add(candidateModel5);
                 return candidateModelArrayListAi;
             }
             default:{

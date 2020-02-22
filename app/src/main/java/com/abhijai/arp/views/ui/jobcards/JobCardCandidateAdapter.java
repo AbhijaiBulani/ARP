@@ -3,6 +3,7 @@ package com.abhijai.arp.views.ui.jobcards;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,15 @@ import com.abhijai.arp.models.CandidateModel;
 import com.abhijai.arp.views.ui.timeline.TimeLineActivity;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class JobCardCandidateAdapter extends RecyclerView.Adapter<JobCardCandidateAdapter.MyJobCardCandidateViews> {
 
     private ArrayList<CandidateModel> candidateModelArrayList = new ArrayList<>();
+    Random r = new Random();
+
     Context activityContext;
     public JobCardCandidateAdapter(ArrayList<CandidateModel> candidateModelArrayList, Context context){
         this.candidateModelArrayList = candidateModelArrayList;
@@ -40,11 +46,51 @@ public class JobCardCandidateAdapter extends RecyclerView.Adapter<JobCardCandida
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activityContext, TimeLineActivity.class);
+                /*Intent intent = new Intent(activityContext, TimeLineActivity.class);
                 intent.putExtra(AppConstants.CANDIDATE_NAME,candidateModelArrayList.get(position).getCandidateName());
-                activityContext.startActivity(intent);
+                activityContext.startActivity(intent);*/
+                String url = "me.jerryhanks.demo";
+                Intent i = activityContext.getPackageManager().getLaunchIntentForPackage(url);
+//                Intent i = new Intent(url);
+//                i.setData(Uri.parse(url));
+                activityContext.startActivity(i);
             }
         });
+        if (position==0){
+            //holder.circleImageView0.setBackgroundResource(R.drawable.img1);
+            holder.circleImageView0.setVisibility(View.VISIBLE);
+            holder.circleImageView1.setVisibility(View.GONE);
+            holder.circleImageView2.setVisibility(View.GONE);
+            holder.circleImageView3.setVisibility(View.GONE);
+        }
+        else if (position==1){
+            //holder.circleImageView.setBackgroundResource(R.drawable.img2);
+            holder.circleImageView0.setVisibility(View.GONE);
+            holder.circleImageView1.setVisibility(View.VISIBLE);
+            holder.circleImageView2.setVisibility(View.GONE);
+            holder.circleImageView3.setVisibility(View.GONE);
+        }
+        else if (position==2){
+            //holder.circleImageView.setBackgroundResource(R.drawable.img3);
+            holder.circleImageView0.setVisibility(View.GONE);
+            holder.circleImageView1.setVisibility(View.GONE);
+            holder.circleImageView2.setVisibility(View.VISIBLE);
+            holder.circleImageView3.setVisibility(View.GONE);
+        }
+        else if (position==3){
+            //holder.circleImageView.setBackgroundResource(R.drawable.img4);
+            holder.circleImageView0.setVisibility(View.GONE);
+            holder.circleImageView1.setVisibility(View.GONE);
+            holder.circleImageView2.setVisibility(View.GONE);
+            holder.circleImageView3.setVisibility(View.VISIBLE);
+        }
+        else {
+            //holder.circleImageView.setBackgroundResource(R.drawable.img2);
+            holder.circleImageView0.setVisibility(View.VISIBLE);
+            holder.circleImageView1.setVisibility(View.GONE);
+            holder.circleImageView2.setVisibility(View.GONE);
+            holder.circleImageView3.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -56,10 +102,19 @@ public class JobCardCandidateAdapter extends RecyclerView.Adapter<JobCardCandida
         private TextView textViewCandidateName;
         private TextView textViewMatchingPercentage;
         private View view;
+        private CircleImageView circleImageView0;
+        private CircleImageView circleImageView1;
+        private CircleImageView circleImageView2;
+        private CircleImageView circleImageView3;
         public MyJobCardCandidateViews(@NonNull View itemView) {
             super(itemView);
             view = itemView;
             textViewCandidateName = itemView.findViewById(R.id.tv_jobCardCandidateName);
+            circleImageView0 = itemView.findViewById(R.id.civ_candidateImage0);
+            circleImageView1 = itemView.findViewById(R.id.civ_candidateImage1);
+            circleImageView2 = itemView.findViewById(R.id.civ_candidateImage2);
+            circleImageView3 = itemView.findViewById(R.id.civ_candidateImage3);
+            //me.jerryhanks.demo
             textViewMatchingPercentage = itemView.findViewById(R.id.tv_jobCardCandidatePercentage);
         }
         private void populateJobCardCandidate(CandidateModel model){

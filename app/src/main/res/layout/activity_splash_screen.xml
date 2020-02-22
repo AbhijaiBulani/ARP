@@ -5,8 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/appThemeBlue"
+    android:background="#fff"
     tools:context=".views.SplashScreen">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash1"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,6 +21,7 @@
         android:textColor="#fff"
         android:layout_centerInParent="true"
         android:textSize="30sp"
+        android:visibility="gone"
         />
 
 </RelativeLayout>

@@ -19,23 +19,55 @@
             >
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image_notification"
+                android:id="@+id/profile_image_notification0"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/avatar"
-                app:civ_border_width="2dp"
+                android:src="@drawable/img4"
                 app:civ_border_color="#FF000000"
                 android:layout_centerVertical="true"
                 />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image_notification1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img1"
+                app:civ_border_color="#FF000000"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image_notification2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img2"
+                app:civ_border_color="#FF000000"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image_notification3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img3"
+                app:civ_border_color="#FF000000"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ram charan has shown interest for java job."
                 android:textColor="#000"
                 android:textSize="16sp"
-                android:paddingStart="15dp"
+                android:paddingStart="65dp"
                 android:id="@+id/tv_notificationMessage"
-                android:layout_toRightOf="@+id/profile_image_notification"
                 android:layout_centerVertical="true"
                 />
             <TextView
@@ -45,6 +77,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/tv_notificationMessage"
                 android:id="@+id/tv_notificationDate"
+                android:layout_marginTop="5dp"
                 />
 
         </RelativeLayout>

@@ -6,6 +6,12 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_home"
+        android:name="com.abhijai.arp.views.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
         android:id="@+id/nav_jobCards"
         android:name="com.abhijai.arp.views.ui.jobcards.JobCardFragment"
         android:label="@string/menu_job_cards"
@@ -16,12 +22,6 @@
         android:name="com.abhijai.arp.views.ui.notifications.NotificationFragment"
         android:label="@string/menu_notification"
         tools:layout="@layout/fragment_notification" />
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.abhijai.arp.views.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
