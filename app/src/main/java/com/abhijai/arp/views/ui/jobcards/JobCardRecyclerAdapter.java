@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abhijai.arp.R;
+import com.abhijai.arp.helper.AppConstants;
 import com.abhijai.arp.models.JobCardModel;
 
 import java.util.ArrayList;
@@ -37,12 +38,13 @@ public class JobCardRecyclerAdapter extends RecyclerView.Adapter<JobCardRecycler
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyJobCardViews holder, int position) {
+    public void onBindViewHolder(@NonNull MyJobCardViews holder, final int position) {
         holder.populateJobCardData(jobCardModelArrayList.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity,JobCardCandidate.class);
+                Intent intent = new Intent(activity, JobCardCandidateActivity.class);
+                intent.putExtra(AppConstants.JOB_TITLE,position);
                 activity.startActivity(intent);
             }
         });

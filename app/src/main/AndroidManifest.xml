@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".views.ui.timeline.TimeLineActivity"></activity>
         <activity
             android:name=".views.NavFeaturesActivity"
             android:label="@string/title_activity_nav_features"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".views.BaseActivity" />
-        <activity android:name=".views.ui.jobcards.JobCardCandidate" />
+        <activity android:name=".views.ui.jobcards.JobCardCandidateActivity" />
         <activity android:name=".views.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
