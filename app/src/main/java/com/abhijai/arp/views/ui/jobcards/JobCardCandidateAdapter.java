@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abhijai.arp.R;
@@ -25,8 +26,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class JobCardCandidateAdapter extends RecyclerView.Adapter<JobCardCandidateAdapter.MyJobCardCandidateViews> {
 
     private ArrayList<CandidateModel> candidateModelArrayList = new ArrayList<>();
-    Random r = new Random();
-
     Context activityContext;
     public JobCardCandidateAdapter(ArrayList<CandidateModel> candidateModelArrayList, Context context){
         this.candidateModelArrayList = candidateModelArrayList;
@@ -49,11 +48,12 @@ public class JobCardCandidateAdapter extends RecyclerView.Adapter<JobCardCandida
                 /*Intent intent = new Intent(activityContext, TimeLineActivity.class);
                 intent.putExtra(AppConstants.CANDIDATE_NAME,candidateModelArrayList.get(position).getCandidateName());
                 activityContext.startActivity(intent);*/
-                String url = "me.jerryhanks.demo";
-                Intent i = activityContext.getPackageManager().getLaunchIntentForPackage(url);
+                /*String url = "me.jerryhanks.demo";
+                Intent i = activityContext.getPackageManager().getLaunchIntentForPackage(url);*/
 //                Intent i = new Intent(url);
 //                i.setData(Uri.parse(url));
-                activityContext.startActivity(i);
+                //activityContext.startActivity(i);
+                 createDialog(candidateModelArrayList.get(position).getCandidateName());
             }
         });
         if (position==0){
@@ -131,7 +131,15 @@ public class JobCardCandidateAdapter extends RecyclerView.Adapter<JobCardCandida
             else {
                 textViewMatchingPercentage.setTextColor(Color.parseColor(AppConstants.RED));
             }
-
         }
+    }
+
+    private void createDialog(String name){
+        AlertDialog builder = new AlertDialog.Builder(activityContext).create();
+        View view = LayoutInflater.from(activityContext).inflate(R.layout.timeline_custom_demo,null,false);
+        TextView textViewName = view.findViewById(R.id.tv_candidateNameInTimeLine);
+        textViewName.setText(name);
+        builder.setView(view);
+        builder.show();
     }
 }
